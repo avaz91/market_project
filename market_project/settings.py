@@ -28,9 +28,11 @@ TEMPLATE_DIRS = (
 SECRET_KEY = '0@wfex&-p^n^v_jz8^-3te7!f)z2=mhy9!cbda)2ewb)sk15i6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "*"
+]
 
 
 # Application definition
@@ -134,8 +136,10 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATICFILES_DIRS = [
-    'static'
-]
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'collectedstatic')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
